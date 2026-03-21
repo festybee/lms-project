@@ -22,6 +22,13 @@ function Dashboard() {
         { to: "/manage-courses", label: "✏️ Manage Courses" },
         { to: "/users", label: "👥 Manage Users" },
     ];
+    
+    const getLinks = () => {
+        if (user?.role === "student") return studentLinks;
+        if (user?.role === "teacher") return teacherLinks;
+        if (user?.role === "admin") return adminLinks;
+        return [];
+    };
 
     return (
         <div>
