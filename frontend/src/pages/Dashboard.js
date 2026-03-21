@@ -1,10 +1,48 @@
+import { useAuth } from "../context/AuthContext";
+import { Link } from "react-router-dom";
+import Navbar from "../components/Navbar";
+
+
 function Dashboard() {
-  return (
-    <div>
-      <h1>Dashboard</h1>
-      <p>Welcome to the dashboard! This page is accessible to all authenticated users.</p>
-    </div>
-  );
+
+    const { user } = useAuth();
+
+    const studentLinks = [
+        { to: "/courses", label: "📚 Browse Courses" },
+        { to: "/my-courses", label: "🎓 My Enrolled Courses" },
+    ];
+
+    const teacherLinks = [
+        { to: "/courses", label: "📚 Browse Courses" },
+        { to: "/manage-courses", label: "🎛️ Manage Courses" },
+    ];
+
+    const adminLinks = [
+        { to: "/courses", label: "📚 Browse Courses" },
+        { to: "/manage-courses", label: "✏️ Manage Courses" },
+        { to: "/users", label: "👥 Manage Users" },
+    ];
+
+    return (
+        <div>
+            <Navbar />
+            <div className="dashboard-container">
+                <div className="dashboard-header">
+                    <h1>Welcome, {user?.username}! 👋</h1>
+                    <p>You are logged in as <strong>{user?.role}</strong></p>
+                </div>
+                <div className="dashboard-cards">
+                    {getLinks().map((link) => (
+                        <Link key={link.to} to={link.to} className="dashboard-card">
+                            {link.label}
+                        </Link>
+                    ))}
+                </div>
+             </div>
+        </div>
+    );
 }
+
+
 
 export default Dashboard;
