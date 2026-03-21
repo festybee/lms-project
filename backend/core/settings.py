@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'corsheaders',
 
     # Third party
     'rest_framework',
@@ -54,6 +55,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',  # Added this 2 lines after installing django-cors-headers to allow request between ports
+    'django.middleware.security.SecurityMiddleware',
 ]
 
 ROOT_URLCONF = 'core.urls'
@@ -130,3 +133,8 @@ REST_FRAMEWORK = {
         'rest_framework.authentication.TokenAuthentication',
     ],
 }
+
+# Added after installing django-cors-headers to allow request between ports
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+]

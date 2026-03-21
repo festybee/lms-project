@@ -5,8 +5,8 @@ import { AuthProvider, useAuth } from './context/AuthContext';
 import Login from './pages/Login';
 import Register from './pages/Register';
 import Dashboard from './pages/Dashboard';
-import Course from './pages/Course';
-import MyCourse from './pages/MyCourse';
+import Courses from './pages/Courses';
+import MyCourses from './pages/MyCourses';
 import ManageCourses from './pages/ManageCourses';
 import Users from './pages/Users';
 
@@ -42,14 +42,14 @@ function App() {
           } />
           <Route  path="/courses" element={
             <ProtectedRoute>
-              <Course />
+              <Courses />
             </ProtectedRoute>
           } />
 
            {/* Protected - student only */}
            <Route  path="/my-courses" element={
             <ProtectedRoute roles={['student']}>
-              <MyCourse />
+              <MyCourses />
             </ProtectedRoute>
           } />
 
