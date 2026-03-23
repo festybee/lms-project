@@ -37,20 +37,22 @@ function Login() {
                 {error && <p className="error">{error}</p>}
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
-                        <label>Username</label>
+                        <label htmlFor="username">Username</label>
                         <input
                             type="text"
                             name="username"
+                            id="username"
                             value={formData.username}
                             onChange={handleChange}
                             required
                         />
                     </div>
                     <div className="form-group">
-                        <label>Password</label>
+                         <label htmlFor="password">Password</label>
                         <input
                             type="password"
                             name="password"
+                            id="password"
                             value={formData.password}
                             onChange={handleChange}
                             required

@@ -1,0 +1,10 @@
+export const loginUser = jest.fn();
+export const registerUser = jest.fn();
+export const logoutUser = jest.fn();
+export const getCourses = jest.fn();
+export const getMyCourses = jest.fn();
+export const createCourse = jest.fn();
+export const updateCourse = jest.fn();
+export const deleteCourse = jest.fn();
+export const enrollCourse = jest.fn();
+export const getUsers = jest.fn();

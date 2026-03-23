@@ -36,37 +36,40 @@ function Register() {
                 {error && <p className="error">{error}</p>}
                 <form onSubmit={handleSubmit}>
                     <div className="form-group">
-                        <label>Username</label>
+                        <label htmlFor="username">Username</label>
                         <input
                             type="text"
                             name="username"
+                            id="username"
                             value={formData.username}
                             onChange={handleChange}
                             required
                         />
                     </div>
                     <div className="form-group">
-                        <label>Email</label>
+                        <label htmlFor="email">Email</label>
                         <input
                             type="email"
                             name="email"
+                            id="email"
                             value={formData.email}
                             onChange={handleChange}
                            />
                     </div>
                     <div className="form-group">
-                        <label>Password</label>
+                        <label htmlFor="password">Password</label>
                         <input
                             type="password"
                             name="password"
+                            id="password"
                             value={formData.password}
                             onChange={handleChange}
                             required
                         />
                     </div>
                     <div className="form-group">
-                        <label>Role</label>
-                        <select name="role" value={formData.role} onChange={handleChange}>
+                        <label htmlFor="role">Role</label>
+                        <select name="role" id="role" value={formData.role} onChange={handleChange}>
                             <option value="student">Student</option>
                             <option value="teacher">Teacher</option>
                         </select>

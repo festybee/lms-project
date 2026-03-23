@@ -61,3 +61,4 @@ class EnrollmentSerializer(serializers.ModelSerializer):
         ).exists():
             raise serializers.ValidationError('You are already enrolled in this course')
         return data
+    
