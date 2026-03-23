@@ -52,3 +52,12 @@ class EnrollmentSerializer(serializers.ModelSerializer):
     class Meta:
         model = Enrollment
         fields = ['id', 'course', 'course_id', 'enrolled_at']
+
+    def validate(self, data):
+        request = self.context.get('request')
+        if request and Enrollment.objects.filter(
+            student=request.user,
+            course=data['course']
+        ).exists():
+            raise serializers.ValidationError('You are already enrolled in this course')
+        return data
