@@ -20,6 +20,13 @@ class RegisterSerializer(serializers.ModelSerializer):
         )
         return user 
 
+    def validate_role(self, value):
+        if value == 'admin':
+            raise serializers.ValidationError(
+                'Admin accounts cannot be self-registered'
+            )
+        return value
+
 
 class UserSerializer(serializers.ModelSerializer):
     # Returns safe user data (no password)

@@ -28,7 +28,7 @@ export const updateCourse = (id, data) => API.put(`/courses/${id}/`, data);
 export const deleteCourse = (id) => API.delete(`/courses/${id}/`);
 
 // Enrollments
-export const enrollCourse = (courseId) => API.post(`/enroll/`, { course_id });
+export const enrollCourse = (courseId) => API.post(`/enroll/`, { course_id: courseId });
 export const getMyCourses = () => API.get('/my-courses/');
 
 // Admin
