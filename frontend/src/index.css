@@ -449,3 +449,94 @@ button:disabled {
 .btn-cancel:hover {
     background-color: #e0e0e0;
 }
+
+/* User stats row */
+.user-stats {
+    display: flex;
+    gap: 1.5rem;
+    font-size: 0.9rem;
+    color: #555;
+    align-items: center;
+}
+
+.user-stats strong {
+    color: #1a73e8;
+}
+
+/* Search bar */
+.search-bar {
+    margin-bottom: 1.5rem;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 0.6rem 0.8rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.search-bar input:focus {
+    outline: none;
+    border-color: #1a73e8;
+}
+
+/* Users table */
+.users-table-wrapper {
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+}
+
+.users-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.users-table th {
+    background-color: #1a73e8;
+    color: white;
+    padding: 0.9rem 1rem;
+    text-align: left;
+    font-size: 0.9rem;
+}
+
+.users-table td {
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid #f0f0f0;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.users-table tr:last-child td {
+    border-bottom: none;
+}
+
+.users-table tr:hover td {
+    background-color: #f8f9ff;
+}
+
+/* Role badges */
+.badge {
+    padding: 0.25rem 0.7rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-transform: capitalize;
+}
+
+.badge-admin {
+    background-color: #fce8e6;
+    color: #d93025;
+}
+
+.badge-teacher {
+    background-color: #e8f0fe;
+    color: #1a73e8;
+}
+
+.badge-student {
+    background-color: #e6f4ea;
+    color: #2d7a3a;
+}
