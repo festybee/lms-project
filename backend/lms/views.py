@@ -50,9 +50,14 @@ class LoginView(APIView):
     
 
 class LogoutView(APIView):
+    permission_classes = [permissions.AllowAny]
+
     def post(self, request):
-        request.user.auth_token.delete()
-        return Response(status=status.HTTP_204_NO_CONTENT)
+        try:
+            request.user.auth_token.delete()
+        except Exception:
+            pass
+        return Response({'message': 'Logged out successfully'}, status=status.HTTP_200_OK)
     
 
 # Course views
