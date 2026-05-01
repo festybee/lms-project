@@ -26,7 +26,7 @@ SECRET_KEY = 'django-insecure-i4&!7t00e_d$*hgsmj&bkjna+iaf=xc=v4@mvoxf0*@&k)pr2k
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.onrender.com']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.railway.app']
 
 # Added after installing django-cors-headers to allow request between ports
 CORS_ALLOWED_ORIGINS = [
