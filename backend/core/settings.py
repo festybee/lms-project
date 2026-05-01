@@ -32,7 +32,7 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.railway.app']
 # Added after installing django-cors-headers to allow request between ports
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
-    'https://your-app.netlify.app',  # update after frontend deploy
+    'https://lms-project-blush-five.vercel.app',  # update after frontend deploy
 ]
 
 # Application definition
