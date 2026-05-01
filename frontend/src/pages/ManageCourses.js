@@ -15,24 +15,24 @@ function ManageCourses() {
     const [editingCourse, setEditingCourse] = useState(null);
 
     useEffect(() => {
-        fetchCourses();
-    }, []);
-
-    const fetchCourses = async () => {
-        try {
-            const res = await getCourses();
-            if (user?.role === 'teacher') {
-                setCourses(res.data.filter(c => c.created_by?.username === user?.username));
-            } else {
-                setCourses(res.data);
+        const fetchCourses = async () => {
+            try {
+                const res = await getCourses();
+                if (user?.role === 'teacher') {
+                    setCourses(res.data.filter(c => c.created_by?.username === user?.username));
+                } else {
+                    setCourses(res.data);
+                }
+            } catch (err) {
+                setError('Failed to load courses');
+            } finally {
+                setLoading(false);
             }
-        } catch (err) {
-            setError('Failed to load courses');
-        } finally {
-            setLoading(false);
-        }
-    };
+        };
+        fetchCourses();
+    }, [user?.role, user?.username]);
 
+    
     const handleChange = (e) => {
         setFormData({ ...formData, [e.target.name]: e.target.value });
     };

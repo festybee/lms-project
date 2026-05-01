@@ -5,7 +5,7 @@ import { registerUser } from "../services/api";
 
 function Register() {
     const navigate = useNavigate();
-    const [formData, setFormData] = useState({ username: "", password: "", role: "student", role: "student" });
+    const [formData, setFormData] = useState({ username: "", password: "", role: "student" });
     const [error, setError] = useState("");
     const [loading, setLoading] = useState(false);
 
