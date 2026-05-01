@@ -28,6 +28,11 @@ DEBUG = os.environ.get('DEBUG', 'False') == 'True'
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.onrender.com']
 
+# Added after installing django-cors-headers to allow request between ports
+CORS_ALLOWED_ORIGINS = [
+    'http://localhost:3000',
+    'https://your-app.netlify.app',  # update after frontend deploy
+]
 
 # Application definition
 
@@ -135,8 +140,3 @@ REST_FRAMEWORK = {
     ],
 }
 
-# Added after installing django-cors-headers to allow request between ports
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:3000',
-    'https://your-app.netlify.app',  # update after frontend deploy
-]
