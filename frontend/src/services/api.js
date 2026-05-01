@@ -2,9 +2,8 @@ import axios from 'axios';
 
 
 const API = axios.create({
-    baseURL: 'https://lms-project-production-6d9b.up.railway.app/api/',
+    baseURL: process.env.REACT_APP_API_URL,
 });
-
 
 // Attach token to every request if it exists
 API.interceptors.request.use((config) => {
