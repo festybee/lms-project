@@ -8,8 +8,8 @@ and admins have full control over users and courses.
 
 ## Live Demo
 
-- Frontend: (add Netlify URL after deployment)
-- Backend API: (add Render URL after deployment)
+- Frontend: on vercel
+- Backend API: on Railway
 
 ---
 
@@ -97,7 +97,7 @@ lms-project/
 1. Clone the repository:
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/lms-project.git
+git clone https://github.com/festybee/lms-project.git
 cd lms-project
 ```
 
@@ -106,7 +106,7 @@ cd lms-project
 ```bash
 python -m venv venv
 
-# Windows
+# Windows (Powershell)
 venv\Scripts\Activate.ps1
 
 # Mac/Linux

@@ -32,7 +32,9 @@ ALLOWED_HOSTS = ['localhost', '127.0.0.1', '.railway.app']
 # Added after installing django-cors-headers to allow request between ports
 CORS_ALLOWED_ORIGINS = [
     'http://localhost:3000',
-    'https://lms-project-blush-five.vercel.app',  # update after frontend deploy
+    'http://127.0.0.1:3000',
+    'http://127.0.0.1:8000',
+    'https://lms-project-blush-five.vercel.app',
 ]
 
 
