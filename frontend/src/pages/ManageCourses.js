@@ -125,8 +125,9 @@ function ManageCourses() {
                         <h3>Create New Course</h3>
                         <form onSubmit={handleCreate}>
                             <div className="form-group">
-                                <label>Title</label>
+                                <label htmlFor="title">Title</label>
                                 <input
+                                    id="title"
                                     type="text"
                                     name="title"
                                     value={formData.title}
@@ -135,8 +136,9 @@ function ManageCourses() {
                                 />
                             </div>
                             <div className="form-group">
-                                <label>Description</label>
+                                <label htmlFor="description">Description</label>
                                 <textarea
+                                    id="description"
                                     name="description"
                                     value={formData.description}
                                     onChange={handleChange}
@@ -157,8 +159,9 @@ function ManageCourses() {
                         <h3>Edit Course</h3>
                         <form onSubmit={handleUpdate}>
                             <div className="form-group">
-                                <label>Title</label>
+                                <label htmlFor="title">Title</label>
                                 <input
+                                    id="title"
                                     type="text"
                                     name="title"
                                     value={formData.title}
@@ -167,8 +170,9 @@ function ManageCourses() {
                                 />
                             </div>
                             <div className="form-group">
-                                <label>Description</label>
+                                <label htmlFor="description">Description</label>
                                 <textarea
+                                    id="description"
                                     name="description"
                                     value={formData.description}
                                     onChange={handleChange}
