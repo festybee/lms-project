@@ -616,3 +616,44 @@ button:disabled {
     color: #2d7a3a;
 }
 
+/* Active row being edited */
+.active-row {
+    background-color: #e8f0fe !important;
+}
+
+/* Mobile users list - hidden on desktop */
+.users-mobile-list {
+    display: none;
+}
+
+/* User mobile card */
+.user-mobile-card {
+    background: white;
+    border-radius: 8px;
+    padding: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.8rem;
+}
+
+.user-mobile-info p {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 0.3rem;
+}
+
+/* Responsive - show cards on mobile, hide table */
+@media (max-width: 768px) {
+    .users-table-wrapper {
+        display: none;
+    }
+    .users-mobile-list {
+        display: block;
+    }
+    .user-stats {
+        flex-direction: column;
+        gap: 0.3rem;
+    }
+}

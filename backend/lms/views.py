@@ -106,3 +106,25 @@ class UserListView(generics.ListAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
     permission_classes = [permissions.IsAuthenticated, IsAdminUser]
+
+
+class UserUpdateView(APIView):
+    permission_classes = [permissions.IsAuthenticated, IsAdminUser]
+
+    def put(self, request, pk):
+        try:
+            user = User.objects.get(pk=pk)
+        except User.DoesNotExist:
+            return Response(
+                {'error': 'User not found'},
+                status=status.HTTP_404_NOT_FOUND
+            )
+
+        allowed_fields = ['username', 'email', 'role']
+        data = {k: v for k, v in request.data.items() if k in allowed_fields}
+
+        serializer = UserSerializer(user, data=data, partial=True)
+        if serializer.is_valid():
+            serializer.save()
+            return Response(serializer.data)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

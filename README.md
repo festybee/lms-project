@@ -295,24 +295,24 @@ Expected output: 20 tests passing
 
 ## Deployment
 
-### Backend — Render
+### Backend — Railway
 
 1. Push code to GitHub
-2. Create a new Web Service on [render.com](https://render.com)
+2. Create a new Web Service on [railway.com](https://railway.com)
 3. Connect your GitHub repository
 4. Set build command: `pip install -r requirements.txt`
 5. Set start command: `gunicorn core.wsgi:application`
 6. Add environment variables as needed
 
-### Frontend — Netlify
+### Frontend — Vercel
 
 1. Push code to GitHub
-2. Create a new site on [netlify.com](https://netlify.com)
+2. Create a new site on [vercel.com](https://vercel.com)
 3. Connect your GitHub repository
 4. Set base directory: `frontend`
 5. Set build command: `npm run build`
-6. Set publish directory: `frontend/build`
-7. Update `src/services/api.js` baseURL to point to your Render backend URL
+6. Set publish directory: `build/`
+7. Update `src/services/api.js` baseURL to point to your Railway backend URL
 
 ---
 

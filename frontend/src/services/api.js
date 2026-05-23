@@ -32,3 +32,4 @@ export const getMyCourses = () => API.get('/my-courses/');
 
 // Admin
 export const getUsers = () => API.get('/users/');
+export const updateUser = (id, data) => API.put(`/users/${id}/`, data);

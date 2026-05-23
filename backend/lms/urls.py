@@ -4,7 +4,8 @@ from rest_framework.response import Response
 from rest_framework.reverse import reverse
 from .views import (
     RegisterView, LoginView, LogoutView, CourseListCreateView,
-    CourseDetailView, EnrollView, MyCoursesView, UserListView
+    CourseDetailView, EnrollView, MyCoursesView, UserListView, 
+    UserUpdateView
 )
 
 
@@ -38,6 +39,7 @@ urlpatterns = [
     path('enroll/', EnrollView.as_view(), name='enroll'),
     path('my-courses/', MyCoursesView.as_view(), name='my-courses'),
 
-    # Admin
+    # Admin user management
     path('users/', UserListView.as_view(), name='user-list'),
+    path('users/<int:pk>/', UserUpdateView.as_view(), name='user-update'),
 ]

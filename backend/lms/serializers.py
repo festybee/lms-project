@@ -29,11 +29,16 @@ class RegisterSerializer(serializers.ModelSerializer):
 
 
 class UserSerializer(serializers.ModelSerializer):
-    # Returns safe user data (no password)
+    # Returns safe user data (no password) and enable editing
 
     class Meta:
         model = User
         fields = ['id', 'username', 'email', 'role']
+        extra_kwargs = {
+            'username': {'required': False},
+            'email': {'required': False},
+            'role': {'required': False},
+        }
 
 
 class CourseSerializer(serializers.ModelSerializer):
