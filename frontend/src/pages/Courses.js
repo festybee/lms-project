@@ -55,7 +55,11 @@ function Courses() {
             <div className="page-container">
                 <div className="page-header">
                     <h1>Available Courses</h1>
-                    <p>Browse and enroll in courses below</p>
+                    <p>
+                        {user?.role === 'student'
+                            ? 'Browse and enroll in courses below'
+                            : 'Browse all available courses'}
+                    </p>
                 </div>
 
                 {successMsg && <p className="success">{successMsg}</p>}
