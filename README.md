@@ -223,6 +223,12 @@ Expected output: 48 tests passing
 
 ## Wireframes
 
+```
+Low fidelity wireframes were created using Miro covering all user views.
+See [wireframes/LMS_wireframes.jpg](./wireframes/LMS_wireframes.jpg)
+
+```
+
 ### Login Page
 
 ```
