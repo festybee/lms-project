@@ -217,7 +217,7 @@ cd frontend
 npm test -- --watchAll=false
 ```
 
-Expected output: 20 tests passing
+Expected output: 48 tests passing
 
 ---
 
