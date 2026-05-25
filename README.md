@@ -188,6 +188,7 @@ App is available at: `http://localhost:3000`
 | POST   | `/api/enroll/`        | Student       | Enroll in a course      |
 | GET    | `/api/my-courses/`    | Student       | Get enrolled courses    |
 | GET    | `/api/users/`         | Admin         | List all users          |
+| PUT    | `/api/users/:id/`     | Admin         | Update a user           |
 
 ### Authentication
 
